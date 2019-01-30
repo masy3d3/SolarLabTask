@@ -1,0 +1,286 @@
+body{
+    font-family: 'Comfortaa', cursive;
+    background-color: #fff9df;
+}
+/* Описание стиля  шапки*/
+.logo_and_description-wrapper{
+    display: flex;
+    justify-content: space-around;
+    height: 95px;
+    background: linear-gradient( rgba(255, 153, 51, 0.812) 0%,#fff9df 100%) no-repeat;
+}
+.logo-wrapper__svg{
+    width: 230px;
+    height: 95px;
+}
+.description h1{
+    font-size: 30px;
+    align-content: center;
+    padding: 40px 200px 0 0;
+}
+/***********************/
+/* Описание стиля  фиксированного меню*/
+.header-menu {
+    position: fixed;
+    z-index: 1000;
+    width: 685px;
+    list-style: none;
+    left: 50%;
+    padding-top:20px;
+    transform: translateX(-50%);
+}
+
+.darkHeader-menu{
+    margin-top:0;
+    background-color:#fff9df;
+    height: 40px;
+    border:solid 1px rgb(255, 153, 51);
+    border-radius: 10px;
+    transition: all 0.2s linear;
+}
+
+.header-menu li {
+    display: inline-block;
+}
+
+.header-menu li::after {
+  content: "|";
+  color: #000;
+  display: inline-block;
+  vertical-align:top;
+}
+
+.header-menu li:last-child:after {
+    content: "";
+}
+
+.header-menu a {
+  color: black;
+  text-decoration: none;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 10px;
+  margin: 0 34px 0 30px;
+  font-size: 17px;
+  display: inline-block;
+  transition: all 0.4s ease-in-out;
+}
+
+.header-menu a:hover{
+    color: rgba(255, 153, 51, 1);
+}
+
+.header-menu a::before, .header-menu a::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: rgba(255, 153, 51, 1);
+    transition: all 0.4s ease-in-out;
+}
+
+.header-menu a:hover::before {
+    left: 0;
+}
+
+.header-menu a:hover::after {
+    right: 0;
+}
+/*************************************/
+/*Описание стиля контента  */
+content h1{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+content p{
+    font-size: 20px;
+}
+/*************************/
+/*Описание стиля блока общая информация*/
+.general-information{
+    margin-top: 100px;
+}
+.general-information_wrapper{
+    margin: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.my-foto{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin-left: 100px;
+}
+
+.general-information_description ul{
+    list-style-type: square;
+    padding-top: 40px;
+}
+
+.general-information_description p {
+    padding-top: 10px;
+    text-align: justify;
+}
+/***************************************/
+/*Описание стиля блока хобби*/
+.hobby-information{
+    margin: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+}
+
+.myhobby-img_wrapper{
+    justify-self: center;
+    position: relative;
+}
+
+.myhobby-img{
+    width: 350px;
+    height: 250px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.812);
+}
+
+.img-description{
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    top:0;
+    background:rgba(0, 0, 0, 0.7);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    width:350px;
+    height: 250px;
+}
+
+.img-description p{
+    color: rgb(255,255,255);
+    text-align: left;
+    font-size: 15px;
+    padding:10px;
+}
+
+.myhobby-img_wrapper:hover .img-description{
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+/***************************/
+/*Описание стиля блока обратная связь*/
+.form-feedback{
+    margin: 50px 0 0 0;
+    display: grid;
+    grid-template-rows: repeat(5,);
+    grid-auto-flow: row;
+}
+
+.input-fio, .email, .textarea{
+    width: 240px;
+    height: 35px;
+    border-radius: 20px;
+    background-image:linear-gradient(to top, #fff9df 0%,  rgba(255, 153, 51, 0.7) 100%);
+    border: none;
+    padding: 5px 26px;
+    font-size: 14px;
+    font-weight: 700px;
+    outline: none;
+    justify-self: center;
+    margin-bottom: 30px;
+}
+
+.textarea {
+    height: 150px;
+    resize: none;
+    padding-top:10px;
+}
+
+.checkbox_wrapper {
+    display: flex;
+    justify-self: center;
+    justify-content: flex-start;
+    outline: none;
+    margin: 0 -10px 20px 0;
+}
+
+.checkbox_wrapper p{
+    user-select: none;
+    font-size: 10px;
+    margin-left: 30px;
+    margin-bottom: 2px;
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox:checked + label:before {
+    content: "\2713";
+    color: #000;
+    text-align: center;
+    line-height: 15px;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+label:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color: rgba(255, 153, 51, 0.7);
+    border-radius: 3px;
+}
+
+.submit {
+    height: 35px;
+    width: 90px;
+    border-radius: 20px;
+    border: none;
+    padding:5px 0;
+    font-size: 10px;
+    margin-right: 200px;
+    margin-bottom: 0;
+    background-color: rgba(255, 153, 51, 0.7);
+    outline: none;
+    justify-self: center;
+    margin-bottom: 30px;
+    font-weight: 700px;
+}
+
+.submit:active{
+    background-color: rgba(255, 153, 51, 1);
+    border-style: solid;
+    border-width: 1px;
+}
+/***********************************/
+/*Описание стиля  подвала страницы */
+.footer{
+    height: 95px;
+    width: 100%;
+    background: linear-gradient( #fff9df 0%, rgba(255, 153, 51, 0.812) 100%) no-repeat;
+    display: flex;
+    justify-content: center;
+}
+.footer a{
+    margin: 40px 20px;
+}
+.footer p{
+    position: absolute;
+    right: 0;
+    margin-top:80px;
+    font-size: 10px;
+}
+/**********************************/
